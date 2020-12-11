@@ -8,20 +8,39 @@
 tell application "iTerm" to set bounds of front window to {0, 23, 1440, 833}
 tell application "Firefox" to set bounds of front window to {0, 23, 1440, 833}
 *)
-set theSize to {475, 50, 2150, 1300}
+set theBounds to {475, 50, 2150, 1300}
 
-tell application "Brave Browser" to set bounds of front window to theSize
-tell application "iTerm" to set bounds of front window to theSize
-tell application "Slack" to set bounds of front window to theSize
+tell application "iTerm" to set bounds of front window to theBounds
+tell application "Slack" to set bounds of front window to theBounds
 
+set thePosition to {475, 50}
+set theSize to {1675, 1250}
 
 tell application "System Events" to tell process "DataGrip"
 	tell window 1
-		set position to {475, 50}
-		set size to {1675, 1250}
+		set position to thePosition
+		set size to theSize
+	end tell
+	
+	tell window 2
+		set position to thePosition
+		set size to theSize
 	end tell
 end tell
 
+tell application "System Events" to tell process "Preview"
+	tell window 1
+		set position to thePosition
+		set size to theSize
+	end tell
+end tell
+
+tell application "System Events" to tell process "Brave Browser"
+	tell window 1
+		set position to thePosition
+		set size to theSize
+	end tell
+end tell
 
 
 (*
