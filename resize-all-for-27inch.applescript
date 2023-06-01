@@ -9,10 +9,11 @@ tell application "iTerm" to set bounds of front window to {0, 23, 1440, 833}
 tell application "Firefox" to set bounds of front window to {0, 23, 1440, 833}
 *)
 
-set thePosition to {475, 50}
+(* set thePosition to {475, 50} *)
+set thePosition to {0, 0}
 set theSize to {1675, 1250}
 
-set appNames to {"Brave Browser", "Dash", "DataGrip", "iTerm2", "Slack", "Snagit 2020", "TextEdit", "Preview"}
+set appNames to {"Safari", "Dash", "DataGrip", "iTerm2", "Slack", "Snagit 2020", "TextEdit", "Preview", "Brave Browser"}
 
 tell application "System Events"
 	repeat with appName in appNames
